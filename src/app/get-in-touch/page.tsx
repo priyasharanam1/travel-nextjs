@@ -25,7 +25,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-200 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#00798c] px-4">
       <div className="w-full max-w-lg bg-white p-8 shadow-lg rounded-lg">
         <h2 className="text-2xl font-bold text-[#00798c] text-center mb-6">
           Get in Touch
@@ -37,7 +37,6 @@ export default function ContactPage() {
           </p>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            {/* Name Field */}
             <div>
               <label className="block text-gray-700 font-medium">Name</label>
               <input
@@ -51,7 +50,6 @@ export default function ContactPage() {
               )}
             </div>
 
-            {/* Contact Number */}
             <div>
               <label className="block text-gray-700 font-medium">
                 Contact Number
@@ -75,7 +73,6 @@ export default function ContactPage() {
               )}
             </div>
 
-            {/* Email Field */}
             <div>
               <label className="block text-gray-700 font-medium">Email</label>
               <input
@@ -95,11 +92,12 @@ export default function ContactPage() {
               )}
             </div>
 
-            {/* Budget Dropdown */}
             <div>
               <label className="block text-gray-700 font-medium">Budget</label>
               <select
-                {...register("budget", { required: "Budget selection is required" })}
+                {...register("budget", {
+                  required: "Budget selection is required",
+                })}
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00798c]"
               >
                 <option value="">Select your budget</option>
@@ -113,7 +111,6 @@ export default function ContactPage() {
               )}
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-[#00798c] text-white font-semibold py-2 rounded-lg hover:bg-[#005f6b] cursor-pointer transition duration-300"

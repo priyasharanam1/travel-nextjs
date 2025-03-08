@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,6 +38,51 @@ export default function RootLayout({
         </nav>
 
         {children}
+        <footer className="w-full text-white z-50 text-center flex flex-col p-4 bg-[#00798ccc]">
+          <h2 className="text-2xl mb-3">Connect with Us</h2>
+
+          <div className="flex justify-center space-x-4 mb-3">
+            <a
+              href="https://www.facebook.com/lykke.travel"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:translate-y-[-5px] transition-transform duration-300"
+            >
+              <FaFacebook size={24} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/lykke.travel/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:translate-y-[-5px] transition-transform duration-300"
+            >
+              <RiInstagramFill size={24} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/travel-lykke/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:translate-y-[-5px] transition-transform duration-300"
+            >
+              <FaLinkedin size={24} />
+            </a>
+
+            <a
+              href="https://www.youtube.com/channel/UCIAwGvNuqlh5n1lFKXG2GaA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:translate-y-[-5px] transition-transform duration-300"
+            >
+              <FaYoutube size={24} />
+            </a>
+          </div>
+
+          <p className="text-sm text-center w-full">
+            Copyright &copy; Travel LYKKE Pvt Ltd. {new Date().getFullYear()}
+          </p>
+        </footer>
       </body>
     </html>
   );

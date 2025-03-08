@@ -96,8 +96,9 @@ export default function DestinationPage({
       )}
 
       <div className="mt-6 px-4">
+        <h1 className="text-3xl font-bold p-2 text-center md:text-left">Trips Available</h1>
         {tripDetails.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
             {tripDetails.map((trip, index) => (
               <div
                 key={index}
@@ -129,7 +130,7 @@ export default function DestinationPage({
         )}
       </div>
       <Link href="/get-in-touch">
-        <button className="fixed bottom-6 right-6 w-14 h-14 bg-[#00798c] text-3xl text-white font-semibold rounded-full shadow-lg hover:bg-[#00798ccc] transition duration-300 flex items-center justify-center cursor-pointer">
+        <button className="fixed bottom-6 right-6 w-14 h-14 bg-[#00798c] text-3xl text-white font-semibold rounded-full shadow-2xl hover:bg-[#00798ccc] transition duration-300 flex items-center justify-center cursor-pointer">
         <IoChatbox />
         </button>
       </Link>
