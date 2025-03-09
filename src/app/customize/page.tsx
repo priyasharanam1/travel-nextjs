@@ -128,7 +128,7 @@ export default function Customize() {
       {step === 1 && (
         <div className="text-center mt-24 mx-auto">
           <h1 className="text-2xl font-bold mb-8">
-            What's <span className="color-light pacifico-regular text-4xl">your pick</span> for your
+            What&apos;s <span className="color-light pacifico-regular text-4xl">your pick</span> for your
             next vacation?
           </h1>
           <div className="relative w-[95%] sm:w-[80%] mb-4 mx-auto bg-white shadow-lg rounded-md">
@@ -160,7 +160,7 @@ export default function Customize() {
       {step === 2 && (
         <div className="text-center mt-4">
           <h2 className="text-2xl font-semibold m-2 mb-6">
-            What's the duration of your holiday?
+            What&apos;s the duration of your holiday?
           </h2>
           <div className="mx-10 grid grid-cols-1 sm:grid-cols-4 gap-6">
             {durationOptions.map(({ days, img }) => (

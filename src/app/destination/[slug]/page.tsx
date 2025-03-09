@@ -1,12 +1,19 @@
 "use client";
 
-import { useEffect, useState, use } from "react";
+import { useEffect, useState, use } from "react"; // ✅ Ensure `use` is imported
 import Link from "next/link";
 import { IoChatbox } from "react-icons/io5";
 import axios from "axios";
 
 interface TripDetails {
   tripName: string;
+  price: number;
+  duration: string;
+  amenities: string[];
+}
+
+interface TripData {
+  "trip-name": string;
   price: number;
   duration: string;
   amenities: string[];
@@ -23,7 +30,7 @@ export default function DestinationPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = use(params);
+  const { slug } = use(params); // ✅ Correctly unwrapping the promise using `use()`
 
   const [destination, setDestination] = useState<Destination | null>(null);
   const [tripDetails, setTripDetails] = useState<TripDetails[]>([]);
@@ -49,13 +56,16 @@ export default function DestinationPage({
         const res = await axios.get(
           `https://json-data-1wm2.onrender.com/destination/${slug}`
         );
+
         if (res.data && res.data.trips) {
-          const formattedTrips = res.data.trips.map((trip: any) => ({
-            tripName: trip["trip-name"],
-            price: trip.price,
-            duration: trip.duration,
-            amenities: trip.amenities,
-          }));
+          const formattedTrips = res.data.trips
+            .filter((trip: TripData) => trip && trip["trip-name"])
+            .map((trip: TripData) => ({
+              tripName: trip["trip-name"],
+              price: trip.price,
+              duration: trip.duration,
+              amenities: trip.amenities || [],
+            }));
 
           setTripDetails(formattedTrips);
         } else {
@@ -75,7 +85,7 @@ export default function DestinationPage({
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-white">
-        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-[#008000] border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -96,7 +106,9 @@ export default function DestinationPage({
       )}
 
       <div className="mt-6 px-4">
-        <h1 className="text-3xl font-bold p-2 text-center md:text-left">Trips Available</h1>
+        <h1 className="text-3xl font-bold p-2 text-center md:text-left">
+          Trips Available
+        </h1>
         {tripDetails.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
             {tripDetails.map((trip, index) => (
@@ -114,7 +126,7 @@ export default function DestinationPage({
                   Price: ${trip.price}
                 </p>
                 <ul className="list-disc pl-5 text-gray-700">
-                  {trip.amenities.map((amenity, i) => (
+                  {trip.amenities.map((amenity: string, i: number) => (
                     <li key={i} className="text-gray-600">
                       {amenity}
                     </li>
@@ -129,9 +141,10 @@ export default function DestinationPage({
           </p>
         )}
       </div>
+
       <Link href="/get-in-touch">
         <button className="fixed bottom-6 right-6 w-14 h-14 bgcolor-secondary text-3xl text-white font-semibold rounded-full shadow-2xl hover:bg-[#00798ccc] transition duration-300 flex items-center justify-center cursor-pointer">
-        <IoChatbox />
+          <IoChatbox />
         </button>
       </Link>
     </div>
