@@ -25,9 +25,9 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#00798c] px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#008000b3] px-4">
       <div className="w-full max-w-lg bg-white p-8 shadow-lg rounded-lg">
-        <h2 className="text-2xl font-bold text-[#00798c] text-center mb-6">
+        <h2 className="text-2xl font-bold color-primary text-center mb-6">
           Get in Touch
         </h2>
 
@@ -42,7 +42,7 @@ export default function ContactPage() {
               <input
                 type="text"
                 {...register("name", { required: "Name is required" })}
-                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#00798c]"
+                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#38b000]"
                 placeholder="Enter your name"
               />
               {errors.name && (
@@ -63,7 +63,7 @@ export default function ContactPage() {
                     message: "Enter a valid 10-digit number",
                   },
                 })}
-                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#00798c]"
+                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#38b000]"
                 placeholder="Enter your contact number"
               />
               {errors.contactNumber && (
@@ -84,7 +84,7 @@ export default function ContactPage() {
                     message: "Enter a valid email address",
                   },
                 })}
-                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#00798c]"
+                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#38b000]"
                 placeholder="Enter your email"
               />
               {errors.email && (
@@ -98,7 +98,7 @@ export default function ContactPage() {
                 {...register("budget", {
                   required: "Budget selection is required",
                 })}
-                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#00798c]"
+                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#38b000]"
               >
                 <option value="">Select your budget</option>
                 <option value="50000-1L">₹50,000 - ₹1 Lakh</option>
@@ -113,7 +113,7 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="w-full bg-[#00798c] text-white font-semibold py-2 rounded-lg hover:bg-[#005f6b] cursor-pointer transition duration-300"
+              className="w-full bgcolor-primary text-white font-semibold py-2 rounded-lg hover:bg-[#005f6b] cursor-pointer transition duration-300"
             >
               Submit
             </button>

@@ -104,20 +104,31 @@ export default function Customize() {
   };
 
   return (
-    <div className="min-h-screen p-6 bg-[#F0F0F0]">
+    <div className="min-h-screen p-6">
       {step > 1 && (
-        <div className="w-[80%] h-[4px] rounded-lg mx-auto bg-gray-300 relative my-18">
+        <div className="w-[80%] h-[4px] rounded-lg mx-auto bg-gray-300 relative mt-18 mb-14">
           <div
-            className="absolute top-0 left-0 h-full bg-[#00798cb3] transition-all"
+            className="absolute top-0 left-0 h-full bgcolor-secondary transition-all"
             style={{ width: `${((step - 1) / 3) * 100}%` }}
           ></div>
         </div>
       )}
 
+{step > 1 && (
+  <div className="mt-4 mx-auto flex justify-center">
+    <button
+      onClick={handlePreviousStep}
+      className="bg-gray-400 text-white py-2 px-8 rounded-md cursor-pointer hover:bg-gray-500 transition-all"
+    >
+      Back
+    </button>
+  </div>
+)}
+
       {step === 1 && (
         <div className="text-center mt-24 mx-auto">
           <h1 className="text-2xl font-bold mb-8">
-            What's <span className="text-[#00798c]">your pick</span> for your
+            What's <span className="color-light pacifico-regular text-4xl">your pick</span> for your
             next vacation?
           </h1>
           <div className="relative w-[95%] sm:w-[80%] mb-4 mx-auto bg-white shadow-lg rounded-md">
@@ -133,7 +144,7 @@ export default function Customize() {
             {filteredDestinations.map((destination) => (
               <li
                 key={destination}
-                className="p-4 text-xl rounded-lg cursor-pointer hover:bg-[#00798c] hover:text-white"
+                className="p-4 text-xl rounded-lg font-semibold cursor-pointer hover:bg-[#38b000] hover:text-white"
                 onClick={() => {
                   setSelectedDestination(destination);
                   handleNextStep();
@@ -147,15 +158,15 @@ export default function Customize() {
       )}
 
       {step === 2 && (
-        <div className="text-center mt-8">
-          <h2 className="text-2xl font-medium m-6">
+        <div className="text-center mt-4">
+          <h2 className="text-2xl font-semibold m-2 mb-6">
             What's the duration of your holiday?
           </h2>
           <div className="mx-10 grid grid-cols-1 sm:grid-cols-4 gap-6">
             {durationOptions.map(({ days, img }) => (
               <div
                 key={days}
-                className="px-4 py-16 border border-[#E8E8E8] rounded-lg bg-white cursor-pointer hover:ring-2 hover:ring-[#00798c] hover:bg-[#e6f4f7] flex flex-col justify-center items-center"
+                className="px-4 py-16 border-1 border-[#008000] font-semibold rounded-lg bg-white shadow-lg shadow-[#008000]/20 cursor-pointer hover:ring-2 hover:ring-[#008000] hover:bg-[#0080001a] flex flex-col justify-center items-center"
                 onClick={() => {
                   setDuration(days);
                   handleNextStep();
@@ -174,15 +185,15 @@ export default function Customize() {
       )}
 
       {step === 3 && (
-        <div className="text-center mt-8">
-          <h2 className="text-2xl font-medium m-4">
+        <div className="text-center mt-4">
+          <h2 className="text-2xl font-semibold m-2 mb-6">
             Who is travelling with you?
           </h2>
           <div className="mx-10 grid grid-cols-1 sm:grid-cols-4 gap-6">
             {travelOptions.map(({ type, img }) => (
               <div
                 key={type}
-                className="px-4 py-16 border border-[#E8E8E8] rounded-lg bg-white cursor-pointer hover:ring-2 hover:ring-[#00798c] hover:bg-[#e6f4f7] flex flex-col justify-center items-center"
+                className="px-4 py-16 border-1 border-[#008000] font-semibold rounded-lg bg-white shadow-lg shadow-[#008000]/20 cursor-pointer hover:ring-2 hover:ring-[#008000] hover:bg-[#0080001a] flex flex-col justify-center items-center"
                 onClick={() => handleTravelTypeSelection(type)}
               >
                 <img
@@ -199,12 +210,12 @@ export default function Customize() {
 
       {(travelType === "Family" || travelType === "Friends") && step === 3 && (
         <div className="text-center mt-8">
-          <h2 className="text-2xl font-medium m-4">
+          <h2 className="text-2xl font-semibold m-4">
             How to configure your rooms?
           </h2>
           {roomConfig.map((room, index) => (
-            <div key={index} className="mb-4 p-4 bg-white rounded-lg shadow-md">
-              <p className="font-medium text-lg mb-2">Room {index + 1}</p>
+            <div key={index} className="mb-4 p-4 w-[360px] mx-auto rounded-lg shadow-md">
+              <p className="font-semibold text-lg mb-4">Room {index + 1}</p>
               <div className="flex items-center justify-center gap-4">
                 <label className="flex items-center gap-2">
                   Adults:
@@ -237,13 +248,13 @@ export default function Customize() {
           <div className="mt-6">
             <button
               onClick={handleAddRoom}
-              className="ring-2 ring-[#00798c] hover:bg-[#e6f4f7] text-[#00798c] py-2 px-4 rounded-md cursor-pointer transition-all"
+              className="ring-2 ring-[#008000] hover:bg-[#9ef01a66] color-primary py-2 px-4 rounded-md cursor-pointer transition-all"
             >
               Add New Room
             </button>
             <button
               onClick={handleNextStep}
-              className="bg-[#00798c] text-white py-2 px-4 rounded-md ml-4 hover:bg-[#00798ccc] cursor-pointer transition-all"
+              className="bg-[#008000] text-white py-2 px-4 rounded-md ml-4 hover:bg-[#008000cc] cursor-pointer transition-all"
             >
               Confirm Changes
             </button>
@@ -253,7 +264,7 @@ export default function Customize() {
 
       {step === 4 && (
         <div className="text-center p-8 bg-white rounded-lg shadow-md max-w-2xl mx-auto">
-          <h1 className="text-3xl font-bold text-[#00798c] mb-6">
+          <h1 className="text-3xl font-bold color-primary mb-6">
             🎉 Congratulations!
           </h1>
           <div className="space-y-4 text-gray-700">
@@ -271,7 +282,7 @@ export default function Customize() {
               Rooms: <span className="font-semibold text-black">{rooms}</span>
             </p>
             <div className="mt-6">
-              <p className="text-lg font-medium text-[#00798c]">
+              <p className="text-lg font-medium color-secondary">
                 Room Configuration:
               </p>
               <ul className="space-y-2">
@@ -288,14 +299,6 @@ export default function Customize() {
         </div>
       )}
 
-      {step > 1 && (
-        <button
-          onClick={handlePreviousStep}
-          className="mt-12 bg-gray-400 flex text-white py-2 px-4 mx-auto rounded-md cursor-pointer hover:bg-gray-500 transition-all"
-        >
-          Back
-        </button>
-      )}
     </div>
   );
 }
