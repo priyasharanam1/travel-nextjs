@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, use } from "react"; // ✅ Ensure `use` is imported
+import { useEffect, useState, use } from "react";
 import Link from "next/link";
 import { IoChatbox } from "react-icons/io5";
 import axios from "axios";
@@ -30,7 +30,7 @@ export default function DestinationPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = use(params); // ✅ Correctly unwrapping the promise using `use()`
+  const { slug } = use(params);
 
   const [destination, setDestination] = useState<Destination | null>(null);
   const [tripDetails, setTripDetails] = useState<TripDetails[]>([]);
