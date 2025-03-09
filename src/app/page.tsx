@@ -77,7 +77,7 @@ export default function Home() {
         </Swiper>
 
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 bg-white z-10 rounded-full shadow-lg p-4 flex items-center justify-between cursor-pointer"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 bg-white border-4 border-[#9ef01a] z-10 rounded-full shadow-lg p-4 flex items-center justify-between cursor-pointer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => router.push("/customize")}
@@ -107,7 +107,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">{destination.title}</h3>
                 <Link
                   href={`/destination/${destination.handle}`}
-                  className="px-4 py-2 bg-[#00798c] text-white rounded-md hover:bg-[#00798ccc] cursor-pointer transition"
+                  className="px-4 py-2 bgcolor-secondary text-white rounded-md hover:bg-[#00798ccc] cursor-pointer transition"
                 >
                   Explore
                 </Link>

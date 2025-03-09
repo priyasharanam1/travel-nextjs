@@ -56,3 +56,27 @@ body {
   color: var(--foreground);
   font-family: "Lato", sans-serif;
 }
+
+.color-primary{
+  color: #008000;
+}
+
+.color-secondary{
+  color: #38b000;
+}
+
+.color-light{
+  color: #9ef01a;
+}
+
+.bgcolor-primary{
+  background-color: #008000;
+}
+
+.bgcolor-secondary{
+  background-color: #38b000;
+}
+
+.bgcolor-light{
+  background-color: #9ef01a;
+}

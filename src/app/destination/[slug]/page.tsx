@@ -110,7 +110,7 @@ export default function DestinationPage({
                 <p className="text-lg text-gray-500 mb-2">
                   Duration: {trip.duration}
                 </p>
-                <p className="text-xl font-semibold text-[#00798c] mb-3">
+                <p className="text-xl font-semibold color-secondary mb-3">
                   Price: ${trip.price}
                 </p>
                 <ul className="list-disc pl-5 text-gray-700">
@@ -130,7 +130,7 @@ export default function DestinationPage({
         )}
       </div>
       <Link href="/get-in-touch">
-        <button className="fixed bottom-6 right-6 w-14 h-14 bg-[#00798c] text-3xl text-white font-semibold rounded-full shadow-2xl hover:bg-[#00798ccc] transition duration-300 flex items-center justify-center cursor-pointer">
+        <button className="fixed bottom-6 right-6 w-14 h-14 bgcolor-secondary text-3xl text-white font-semibold rounded-full shadow-2xl hover:bg-[#00798ccc] transition duration-300 flex items-center justify-center cursor-pointer">
         <IoChatbox />
         </button>
       </Link>

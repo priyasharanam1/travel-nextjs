@@ -38,7 +38,7 @@ export default function RootLayout({
         </nav>
 
         {children}
-        <footer className="w-full text-white z-50 text-center flex flex-col p-4 bg-[#00798ccc]">
+        <footer className="w-full text-white z-50 text-center flex flex-col p-4 bg-black">
           <h2 className="text-2xl mb-3">Connect with Us</h2>
 
           <div className="flex justify-center space-x-4 mb-3">
@@ -46,7 +46,7 @@ export default function RootLayout({
               href="https://www.facebook.com/lykke.travel"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:translate-y-[-5px] transition-transform duration-300"
+              className="color-light hover:translate-y-[-5px] transition-transform duration-300"
             >
               <FaFacebook size={24} />
             </a>
@@ -55,7 +55,7 @@ export default function RootLayout({
               href="https://www.instagram.com/lykke.travel/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:translate-y-[-5px] transition-transform duration-300"
+              className="color-light hover:translate-y-[-5px] transition-transform duration-300"
             >
               <RiInstagramFill size={24} />
             </a>
@@ -64,7 +64,7 @@ export default function RootLayout({
               href="https://www.linkedin.com/company/travel-lykke/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:translate-y-[-5px] transition-transform duration-300"
+              className="color-light hover:translate-y-[-5px] transition-transform duration-300"
             >
               <FaLinkedin size={24} />
             </a>
@@ -73,7 +73,7 @@ export default function RootLayout({
               href="https://www.youtube.com/channel/UCIAwGvNuqlh5n1lFKXG2GaA"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:translate-y-[-5px] transition-transform duration-300"
+              className="color-light hover:translate-y-[-5px] transition-transform duration-300"
             >
               <FaYoutube size={24} />
             </a>
