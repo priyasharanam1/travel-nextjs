@@ -42,7 +42,7 @@ export default function ContactPage() {
               <input
                 type="text"
                 {...register("name", { required: "Name is required" })}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00798c]"
+                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#00798c]"
                 placeholder="Enter your name"
               />
               {errors.name && (
@@ -63,7 +63,7 @@ export default function ContactPage() {
                     message: "Enter a valid 10-digit number",
                   },
                 })}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00798c]"
+                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#00798c]"
                 placeholder="Enter your contact number"
               />
               {errors.contactNumber && (
@@ -84,7 +84,7 @@ export default function ContactPage() {
                     message: "Enter a valid email address",
                   },
                 })}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00798c]"
+                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#00798c]"
                 placeholder="Enter your email"
               />
               {errors.email && (
@@ -98,7 +98,7 @@ export default function ContactPage() {
                 {...register("budget", {
                   required: "Budget selection is required",
                 })}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00798c]"
+                className="w-full px-4 py-2 border rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-[#00798c]"
               >
                 <option value="">Select your budget</option>
                 <option value="50000-1L">₹50,000 - ₹1 Lakh</option>

@@ -89,7 +89,7 @@ export default function DestinationPage({
             alt={destination.title}
             className="w-full h-full object-cover"
           />
-          <h1 className="absolute inset-0 flex items-center justify-center text-6xl font-extrabold text-white uppercase tracking-wide drop-shadow-lg">
+          <h1 className="absolute inset-0 flex items-center justify-center text-6xl text-white lato-extrabold text-center uppercase tracking-wide drop-shadow-lg">
             {destination.title}
           </h1>
         </div>
