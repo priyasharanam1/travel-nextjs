@@ -166,7 +166,7 @@ export default function Customize() {
             {durationOptions.map(({ days, img }) => (
               <div
                 key={days}
-                className="px-4 py-16 border-1 border-[#008000] font-semibold rounded-lg bg-white shadow-lg shadow-[#008000]/20 cursor-pointer hover:ring-2 hover:ring-[#008000] hover:bg-[#0080001a] flex flex-col justify-center items-center"
+                className="px-4 py-16 border-1 border-[#008000] font-semibold rounded-lg bg-white shadow-lg shadow-[#008000]/20 cursor-pointer hover:ring-2 hover:ring-[#008000] hover:bg-[#0080001a] flex flex-col justify-center items-center transform transition-transform duration-300 hover:-translate-y-2"
                 onClick={() => {
                   setDuration(days);
                   handleNextStep();
@@ -193,7 +193,7 @@ export default function Customize() {
             {travelOptions.map(({ type, img }) => (
               <div
                 key={type}
-                className="px-4 py-16 border-1 border-[#008000] font-semibold rounded-lg bg-white shadow-lg shadow-[#008000]/20 cursor-pointer hover:ring-2 hover:ring-[#008000] hover:bg-[#0080001a] flex flex-col justify-center items-center"
+                className="px-4 py-16 border-1 border-[#008000] font-semibold rounded-lg bg-white shadow-lg shadow-[#008000]/20 cursor-pointer hover:ring-2 hover:ring-[#008000] hover:bg-[#0080001a] flex flex-col justify-center items-center transform transition-transform duration-300 hover:-translate-y-2"
                 onClick={() => handleTravelTypeSelection(type)}
               >
                 <img

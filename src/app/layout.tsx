@@ -31,7 +31,7 @@ export default function RootLayout({
           <Link href="/">
             <h1 className="relative text-xl font-bold text-white tracking-tight drop-shadow-lg cursor-pointer px-6 py-2 rounded-md">
               <span className="before:content-[''] before:absolute before:w-20 before:h-[1px] before:bg-white before:-top-1 before:left-1/2 before:-translate-x-1/2" />
-              Travel Lykke
+              WanderNest
               <span className="after:content-[''] after:absolute after:w-20 after:h-[1px] after:bg-white after:-bottom-1 after:left-1/2 after:-translate-x-1/2" />
             </h1>
           </Link>
@@ -80,7 +80,7 @@ export default function RootLayout({
           </div>
 
           <p className="text-sm text-center w-full">
-            Copyright &copy; Travel LYKKE Pvt Ltd. {new Date().getFullYear()}
+            Copyright &copy; WanderNest Pvt Ltd. {new Date().getFullYear()}
           </p>
         </footer>
       </body>
